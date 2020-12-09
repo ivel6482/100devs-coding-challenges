@@ -1,0 +1,86 @@
+/* ==============================================
+Coding challenge #1
+Class #10
+Date: 2020-12-9
+Description: Fahrenheit to Celsius Converter
+============================================== */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+/* .coldForm {
+} */
+
+.cold {
+	background: #63b3ed;
+	color: #2b6cb0;
+}
+
+.mediumForm {
+	background-color: #9b2c2c;
+}
+
+.medium {
+	background-color: #fbd38d;
+	color: #dd6b20;
+}
+
+/* .hotForm {
+} */
+
+.hot {
+	background: #f56565;
+	color: #742a2a;
+}
+
+body {
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 60vh;
+	background: #f7fafc;
+	color: #2d3748;
+}
+
+h1 {
+	font-size: 3.4rem;
+	margin-bottom: 20px;
+}
+
+label {
+	font-size: 2rem;
+	display: block;
+	margin-bottom: 10px;
+}
+
+input {
+	border: none;
+	width: 79%;
+	background: #e2e8f0;
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+
+button {
+	border: none;
+	padding: 10px 15px;
+	font-size: 1.26rem;
+	background: #e2e8f0;
+	color: #2d3748;
+	border-radius: 5px;
+	margin-left: 5px;
+}
+
+#celsius {
+	font-size: 8rem;
+	margin-top: 50px;
+}
