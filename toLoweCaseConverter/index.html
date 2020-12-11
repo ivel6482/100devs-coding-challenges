@@ -1,0 +1,37 @@
+<!-- Coding challenge #2
+Class #11
+Date: 2020-12-11
+Description: Uppercase to Lowercase Text Converter -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h1><span>Uppercase</span> to lowercase converter</h1>
+
+		<form>
+			<label for="textToConvert">Please enter text to convert</label>
+			<textarea
+				name="textToConvert"
+				id="textToConvert"
+				cols="90"
+				rows="20"
+			></textarea>
+			<button id="convertText">Convert Text</button>
+		</form>
+		<pre id="convertedText" class="hidden"></pre>
+		<button class="hidden" id="reset">Convert Another Text</button>
+
+		<script src="main.js"></script>
+	</body>
+</html>
