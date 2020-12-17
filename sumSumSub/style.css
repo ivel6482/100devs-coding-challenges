@@ -1,0 +1,26 @@
+/* Coding challenge #3
+Class #12
+Date 2020-12-16
+Description: Create a function that takes three numbers and multiplies the first two then subtract by the third number */
+
+body {
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+input {
+	padding: 10px 15px;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+
+#calculateBtn {
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+	padding: 10px 15px;
+	font-size: 1.2rem;
+}
