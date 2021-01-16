@@ -8,7 +8,7 @@ function personPositionInArray(personName) {
 	console.log('Original array: ', names)
 	names.push(personName)
 	console.log('Person added: ', names)
-	console.log('Person added position in array: ', names.indexOf(personName))
+	console.log('Person added position in array: ', names.length)
 }
 
 personPositionInArray('Anthony')
