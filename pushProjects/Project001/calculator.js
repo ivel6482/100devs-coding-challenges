@@ -14,10 +14,14 @@ const calculator = {
 			document.querySelector('p').innerText
 		))
 	},
+	reset() {
+		return (document.querySelector('p').innerText = '')
+	},
 }
 
 function getValueFromButtons(e) {
 	e.preventDefault()
+	e.target.name === 'clear' && calculator.reset()
 	e.target.value === '=' ? calculator.compute() : calculator.read(e)
 }
 
