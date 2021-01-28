@@ -4,18 +4,16 @@ buttons.forEach((button) => {
 	button.addEventListener('click', getValueFromButtons)
 })
 
-// Refactor the document.querySelector calls.
 const calculator = {
+	screen: document.querySelector('p'),
 	read(e) {
-		return (document.querySelector('p').innerText += e.target.value)
+		return (this.screen.innerText += e.target.value)
 	},
 	compute() {
-		return (document.querySelector('p').innerText = eval(
-			document.querySelector('p').innerText
-		))
+		return (this.screen.innerText = eval(this.screen.innerText))
 	},
 	reset() {
-		return (document.querySelector('p').innerText = '')
+		return (this.screen.innerText = '')
 	},
 }
 
