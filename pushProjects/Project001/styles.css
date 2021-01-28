@@ -1,10 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+}
+
 .container {
-	margin: 0 auto;
-	width: 25%;
+	max-width: 23%;
 }
 
 .calculatorBody {
@@ -18,20 +30,16 @@ body {
 .calculatorScreen {
 	background: #fff;
 	margin-bottom: 1rem;
-	height: 3rem;
+	height: 4rem;
 	padding: 0.7rem;
 	font-size: 2.4rem;
-}
-
-.calculatorScreen > p {
-	margin: 0;
-	padding: 0;
+	overflow: hidden;
 }
 
 .buttonsContainer {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 0 1rem;
+	gap: 1rem;
 }
 
 .button {
