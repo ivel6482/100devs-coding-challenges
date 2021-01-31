@@ -35,8 +35,19 @@ button:hover {
 	background: #555;
 }
 
+.activityContainer {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	margin-top: 4rem;
+	max-width: 1200px;
+}
+
 .activity {
-	margin-top: 3rem;
+	background: #ccc;
+	padding: 1rem;
+	border-radius: 5px;
+	color: #222;
 }
 
 .activityDetail {

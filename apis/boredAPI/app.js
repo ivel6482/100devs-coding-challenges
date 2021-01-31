@@ -14,9 +14,11 @@ function getRandomActivity() {
 		.then((res) => res.json())
 		.then((data) => {
 			console.log(data)
-			const activitySection = document.querySelector('.activity')
+			const activityContainer = document.querySelector('.activityContainer')
 
-			const activity = document.createElement('p')
+			const activity = document.createElement('section')
+			activity.classList.add('activity')
+			const activityName = document.createElement('p')
 			const type = document.createElement('p')
 			const participants = document.createElement('p')
 			const price = document.createElement('p')
@@ -25,7 +27,7 @@ function getRandomActivity() {
 			const accessibility = document.createElement('p')
 			// const key = document.createElement('p')
 
-			activity.innerText = `Activity: ${data.activity}`
+			activityName.innerText = `Activity: ${data.activity}`
 			type.innerText = `Type: ${data.type}`
 			participants.innerText = `Participants: ${data.participants}`
 			price.innerText = `Price: $${data.price}`
@@ -36,7 +38,7 @@ function getRandomActivity() {
 			// key.innerText = `Key: ${data.key}`
 
 			const elements = [
-				activity,
+				activityName,
 				type,
 				participants,
 				price,
@@ -47,8 +49,10 @@ function getRandomActivity() {
 
 			elements.forEach((element) => {
 				element.classList.add('activityDetail')
-				activitySection.appendChild(element)
+				activity.appendChild(element)
 			})
+
+			activityContainer.appendChild(activity)
 		})
 		.catch((err) => console.error(err))
 }
