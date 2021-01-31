@@ -8,6 +8,50 @@ html {
 	font-size: 67.5%;
 }
 
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+}
+
+h1 {
+	margin-bottom: 1rem;
+}
+
+p {
+	margin-bottom: 2rem;
+}
+
+button {
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 1rem;
+	font-size: 1.4rem;
+	border: 1px solid transparent;
+}
+
+button:hover {
+	background: #ddd;
+	border: 1px solid #aaa;
+	cursor: pointer;
+}
+
+.markCorrect {
+	background: green;
+	color: #fff;
+}
+
+.markIncorrect {
+	background: red;
+	color: #fff;
+}
+
+.hidden {
+	display: none;
+}
+
 .question {
 	font-size: 3rem;
 }

@@ -9,14 +9,16 @@
 	<body>
 		<h1>Ready to test your trivia knowledge?</h1>
 		<p>Answer one out of three question to win. Can you do it?</p>
+		<h2 class="won hidden">You Won</h2>
+		<h2 class="lost hidden">Try Again</h2>
 		<button class="getQuestion">Get Question</button>
 		<section class="currentQuestion">
 			<p class="question"></p>
 			<p class="answer"></p>
 			<section class="actions">
-				<button class="showAnswer">Show Answer</button>
-				<button class="markCorrect">Correct</button>
-				<button class="markIncorrect">Incorrect</button>
+				<button class="showAnswer hidden">Show Answer</button>
+				<button class="markCorrect hidden">Correct</button>
+				<button class="markIncorrect hidden">Incorrect</button>
 			</section>
 		</section>
 		<section class="pastQuestions">
