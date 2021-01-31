@@ -33,6 +33,7 @@ function getQuestion() {
 }
 
 function showAnswer(answer) {
+	document.querySelector('.showAnswer').classList.add('hidden')
 	document.querySelector('.answer').innerHTML = `Answer: ${String(answer)}`
 	document.querySelector('.markCorrect').classList.remove('hidden')
 	document.querySelector('.markIncorrect').classList.remove('hidden')
