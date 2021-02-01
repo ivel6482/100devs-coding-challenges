@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 67.5%;
+}
+
+.hidden {
+	display: none;
+}
+
+h1 {
+	font-size: 5rem;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: Arial, Helvetica, sans-serif;
+	background: black;
+	color: yellow;
+	width: 100%;
+}
+
+form {
+	margin: 2rem auto;
+	width: 60%;
+}
+
+input {
+	background: #ccc;
+	border: none;
+	border-radius: 5px;
+	padding: 1rem 0.5rem;
+	width: 80%;
+}
+
+button {
+	background: yellow;
+	color: black;
+	padding: 1rem 0.5rem;
+	border: none;
+}
