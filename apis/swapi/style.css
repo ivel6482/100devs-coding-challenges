@@ -16,6 +16,10 @@ h1 {
 	font-size: 5rem;
 }
 
+h2 {
+	margin-bottom: 1rem;
+}
+
 body {
 	display: flex;
 	flex-direction: column;

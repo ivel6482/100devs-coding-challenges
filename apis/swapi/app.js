@@ -43,25 +43,39 @@ document.querySelector('.search').addEventListener('click', function (e) {
 			skinColor.innerText = `Skin Color: ${character.skin_color}`
 
 			character.species.forEach((specieContent) => {
-				console.log(specieContent)
-				const specie = document.createElement('li')
-				specie.classList.add('specie')
-				specie.innerText = specieContent
-				species.appendChild(specie)
+				fetch(specieContent)
+					.then((res) => res.json())
+					.then((data) => {
+						const specie = document.createElement('li')
+						specie.classList.add('specie')
+						specie.innerText = data.name
+						specie.appendChild(specie)
+					})
+					.catch((err) => console.error(err))
 			})
 
 			character.starships.forEach((starshipContent) => {
-				const starship = document.createElement('li')
-				starship.classList.add('starship')
-				starship.innerText = starshipContent
-				starships.appendChild(starship)
+				fetch(starshipContent)
+					.then((res) => res.json())
+					.then((data) => {
+						const starship = document.createElement('li')
+						starship.classList.add('starship')
+						starship.innerText = data.name
+						starships.appendChild(starship)
+					})
+					.catch((err) => console.error(err))
 			})
 
 			character.vehicles.forEach((vehicleContent) => {
-				const vehicle = document.createElement('li')
-				vehicle.classList.add('vehicle')
-				vehicle.innerText = vehicleContent
-				vehicles.appendChild(vehicle)
+				fetch(vehicleContent)
+					.then((res) => res.json())
+					.then((data) => {
+						const vehicle = document.createElement('li')
+						vehicle.classList.add('starship')
+						vehicle.innerText = data.name
+						vehicles.appendChild(vehicle)
+					})
+					.catch((err) => console.error(err))
 			})
 
 			// {
