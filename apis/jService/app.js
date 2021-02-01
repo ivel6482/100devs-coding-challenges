@@ -20,6 +20,8 @@ function getQuestion() {
 		.then((data) => {
 			// data[0].question
 			// data[0].answer
+			tries++
+			document.querySelector('.tries').innerText = `Tries: ${tries}/3`
 			question.innerText = ''
 			console.log(data[0])
 			question.innerText = `Question: ${data[0].question}`
@@ -40,12 +42,7 @@ function showAnswer(answer) {
 }
 
 function markCorrect() {
-	tries++
 	score++
-
-	console.log('tries: ', tries)
-	console.log('score: ', score)
-
 	if (tries <= 3 && score > 0) {
 		//Display that the user own in the DOM and make a button to play again
 		console.log('you won')
@@ -55,12 +52,10 @@ function markCorrect() {
 }
 
 function markIncorrect() {
-	console.log('tries: ', tries)
 	if (tries === 3) {
-		document.querySelector('question').innerText = 'You lost.'
+		document.querySelector('.currentQuestion').classList.add('hidden')
+		document.querySelector('.lost').classList.remove('hidden')
 	} else {
-		tries++
-		console.log('tries: ', tries)
 		getQuestion()
 	}
 }
