@@ -23,33 +23,36 @@ document.querySelector('.search').addEventListener('click', function (e) {
 			const character = data.results[0]
 
 			name.innerText = character.name
-			birthYear.innerText = character.birth_year
-			eyeColor.innerText = character.eye_color
-			gender.innerText = character.gender
-			hairColor.innerText = character.hair_color
-			height.innerText = character.height
-			homeWorld.innerText = character.homeworld
-			mass.innerText = character.mass
-			skinColor.innerText = character.skin_color
+			birthYear.innerText = `Birth Year: ${character.birth_year}`
+			eyeColor.innerText = `Eye Color: ${character.eye_color}`
+			gender.innerText = `Gender: ${character.gender}`
+			hairColor.innerText = `Hair Color: ${character.hair_color}`
+			height.innerText = `Height: ${character.height}cm`
+			homeWorld.innerText = `Home World: ${character.homeworld}`
+			mass.innerText = `Mass: ${character.mass}`
+			skinColor.innerText = `Skin Color: ${character.skin_color}`
 
-			// character.species.forEach((specieContent) => {
-			// 	const specie = document.createElement('li')
-			// 	specie.classList.add('specie')
-			// 	specie.innerText = specieContent
-			// 	species.appendChild(specie)
-			// })
+			character.species.forEach((specieContent) => {
+				console.log(specieContent)
+				const specie = document.createElement('li')
+				specie.classList.add('specie')
+				specie.innerText = specieContent
+				species.appendChild(specie)
+			})
 
-			// character.starships.forEach((starshipContent) => {
-			// 	const starship = document.createElement('li')
-			// 	specie.classList.add('starship')
-			// 	starships.appendChild((starship.innerText = starshipContent))
-			// })
+			character.starships.forEach((starshipContent) => {
+				const starship = document.createElement('li')
+				starship.classList.add('starship')
+				starship.innerText = starshipContent
+				starships.appendChild(starship)
+			})
 
-			// character.vehicles.forEach((vehicleContent) => {
-			// 	const vehicle = document.createElement('li')
-			// 	specie.classList.add('vehicle')
-			// 	vehicles.appendChild((vehicle.innerText = vehicleContent))
-			// })
+			character.vehicles.forEach((vehicleContent) => {
+				const vehicle = document.createElement('li')
+				vehicle.classList.add('vehicle')
+				vehicle.innerText = vehicleContent
+				vehicles.appendChild(vehicle)
+			})
 
 			// {
 			// 	count: Number,
