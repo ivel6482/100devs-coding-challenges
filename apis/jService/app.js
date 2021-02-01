@@ -23,10 +23,12 @@ function getQuestion() {
 			tries++
 			document.querySelector('.tries').innerText = `Tries: ${tries}/3`
 			question.innerText = ''
-			console.log(data[0])
 			question.innerText = `Question: ${data[0].question}`
 			document.querySelector('.getQuestion').style.display = 'none'
 			document.querySelector('.showAnswer').classList.remove('hidden')
+			document.querySelector('.answer').classList.add('hidden')
+			document.querySelector('.markCorrect').classList.add('hidden')
+			document.querySelector('.markIncorrect').classList.add('hidden')
 			document
 				.querySelector('.showAnswer')
 				.addEventListener('click', () => showAnswer(data[0].answer))
@@ -35,6 +37,7 @@ function getQuestion() {
 }
 
 function showAnswer(answer) {
+	document.querySelector('.answer').classList.remove('hidden')
 	document.querySelector('.showAnswer').classList.add('hidden')
 	document.querySelector('.answer').innerHTML = `Answer: ${String(answer)}`
 	document.querySelector('.markCorrect').classList.remove('hidden')
