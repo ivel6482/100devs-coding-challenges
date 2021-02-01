@@ -22,13 +22,23 @@ document.querySelector('.search').addEventListener('click', function (e) {
 
 			const character = data.results[0]
 
+			function getHomeWorld(url) {
+				fetch(url)
+					.then((res) => res.json())
+					.then((data) => {
+						homeWorld.innerText = `Home World: ${data.name}`
+					})
+					.catch((err) => console.error(err))
+			}
+
+			getHomeWorld(character.homeworld)
+
 			name.innerText = character.name
 			birthYear.innerText = `Birth Year: ${character.birth_year}`
 			eyeColor.innerText = `Eye Color: ${character.eye_color}`
 			gender.innerText = `Gender: ${character.gender}`
 			hairColor.innerText = `Hair Color: ${character.hair_color}`
 			height.innerText = `Height: ${character.height}cm`
-			homeWorld.innerText = `Home World: ${character.homeworld}`
 			mass.innerText = `Mass: ${character.mass}`
 			skinColor.innerText = `Skin Color: ${character.skin_color}`
 
