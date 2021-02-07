@@ -7,7 +7,7 @@ const slot = {
 	bet: null,
 	spin(betAmount) {
 		this.bet = betAmount
-		document.querySelector('h2').innerText = ''
+		document.querySelector('span').innerText = ''
 		document.querySelector(
 			'.credit'
 		).innerText = `Credit: $${this.credit.toFixed(2)}`
@@ -21,18 +21,19 @@ const slot = {
 			reel3: this.reel3,
 		})
 
-		//TODO: display credits and bet and winnings
-
 		if (slot.reel1 === slot.reel3 && slot.reel2 === slot.reel3) {
 			if (this.bet === 5) {
 				this.credit += this.bet * 3
 			} else if (this.bet === 1.5) {
 				this.credit += this.bet * 0.7
 			}
-			document.querySelector('h2').innerText = 'JACKPOT!'
+			document.querySelector('span').innerText = 'JACKPOT!'
 		} else {
 			if (this.credit === 0) {
-				document.querySelector('h2').innerText = 'GAME OVER'
+				document.querySelector('.actions').classList.add('hidden')
+				document.querySelector('.reset').classList.remove('hidden')
+				document.querySelector('.reels').classList.add('hidden')
+				document.querySelector('span').innerText = 'GAME OVER'
 			} else {
 				this.credit -= this.bet
 			}
@@ -52,9 +53,17 @@ const slot = {
 		document.querySelector('#reel2').innerText = slot.reel2
 		document.querySelector('#reel3').innerText = slot.reel3
 	},
+	reset() {
+		document.querySelector('.actions').classList.remove('hidden')
+		document.querySelector('.reset').classList.add('hidden')
+		document.querySelector('.reels').classList.remove('hidden')
+		slot.credit = 100
+		slot.display(slot.bet)
+	},
 }
 
 document.querySelector('#max').addEventListener('click', () => slot.display(5))
 document
 	.querySelector('#min')
 	.addEventListener('click', () => slot.display(1.5))
+document.querySelector('#reset').addEventListener('click', slot.reset)
