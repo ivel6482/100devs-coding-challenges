@@ -74,8 +74,19 @@ main {
 	border: none;
 	font-size: 4rem;
 	width: 50%;
+	cursor: pointer;
+}
+
+.button:hover {
+	background: #ccc;
 }
 
 span {
-	font-size: 10rem;
+	display: block;
+	text-align: center;
+	font-size: 15rem;
+}
+
+#reset {
+	width: 100%;
 }

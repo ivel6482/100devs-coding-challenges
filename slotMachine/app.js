@@ -11,6 +11,11 @@ const slot = {
 
 		this.bet = betAmount
 
+		document.querySelector('.reset').classList.add('hidden')
+
+		document.querySelector('#min').classList.remove('hidden')
+		document.querySelector('#max').classList.remove('hidden')
+
 		document.querySelector('span').innerText = ''
 		document.querySelector(
 			'.credit'
@@ -36,7 +41,8 @@ const slot = {
 			document.querySelector('span').innerText = 'JACKPOT!'
 		} else {
 			if (this.credit === 0 || this.credit < this.bet) {
-				document.querySelector('.actions').classList.add('hidden')
+				document.querySelector('#min').classList.add('hidden')
+				document.querySelector('#max').classList.add('hidden')
 				document.querySelector('.reset').classList.remove('hidden')
 				document.querySelector('.reels').classList.add('hidden')
 				document.querySelector('span').innerText = 'GAME OVER'
@@ -61,9 +67,9 @@ const slot = {
 		document.querySelector('#reel3').innerText = slot.reel3
 	},
 	reset() {
-		document.querySelector('.actions').classList.remove('hidden')
-		document.querySelector('.reset').classList.add('hidden')
-		document.querySelector('.reels').classList.remove('hidden')
+		document.querySelector('.actions').classList.add('hidden')
+		document.querySelector('.reset').classList.remove('hidden')
+		document.querySelector('.reels').classList.add('hidden')
 
 		slot.credit = 100
 		slot.display(slot.bet)
