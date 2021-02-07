@@ -3,8 +3,9 @@ const slot = {
 	reel1: null,
 	reel2: null,
 	reel3: null,
-	betAmount: null,
-	spin() {
+	credit: 100,
+	bet: null,
+	spin(betAmount) {
 		document.querySelector('h2').innerText = ''
 		this.reel1 = this.reelSymbols[this.calculateRandomIndex()]
 		this.reel2 = this.reelSymbols[this.calculateRandomIndex()]
@@ -15,21 +16,42 @@ const slot = {
 			reel3: this.reel3,
 		})
 
+		this.bet = betAmount
+
+		//TODO: display credits and bet and winnings
+
 		if (slot.reel1 === slot.reel3 && slot.reel2 === slot.reel3) {
-			console.log('JACKPOT')
+			if (this.bet === 5) {
+				this.credit += this.bet * 3
+			} else if (this.bet === 1.5) {
+				this.credit += this.bet * 0.7
+			}
 			document.querySelector('h2').innerText = 'JACKPOT!'
+		} else {
+			if (this.credit === 0) {
+				document.querySelector('h2').innerText = 'GAME OVER'
+			} else {
+				this.credit -= this.bet
+			}
 		}
 	},
 	calculateRandomIndex() {
 		return Math.floor(Math.random() * this.reelSymbols.length)
 	},
-	display() {
-		slot.spin()
+	display(betAmount) {
+		slot.spin(betAmount)
 
+		console.log({
+			credit: this.credit,
+			bet: this.bet,
+		})
 		document.querySelector('#reel1').innerText = slot.reel1
 		document.querySelector('#reel2').innerText = slot.reel2
 		document.querySelector('#reel3').innerText = slot.reel3
 	},
 }
 
-document.querySelector('#bet').addEventListener('click', slot.display)
+document.querySelector('#max').addEventListener('click', () => slot.display(5))
+document
+	.querySelector('#min')
+	.addEventListener('click', () => slot.display(1.5))
