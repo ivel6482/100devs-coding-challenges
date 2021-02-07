@@ -5,27 +5,38 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Slot Machine</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<h1>Slot Machine</h1>
-		<span></span>
-		<p class="credit"></p>
-		<p class="bet"></p>
-		<section class="slot">
-			<section class="reels">
-				<section class="reel" id="reel1"></section>
-				<section class="reel" id="reel2"></section>
-				<section class="reel" id="reel3"></section>
+		<main>
+			<section class="slot">
+				<section class="info">
+					<h1>Slot Machine</h1>
+					<section>
+						<p class="credit">Credit: $100.00</p>
+						<p class="bet">Bet: Place a bet below</p>
+					</section>
+				</section>
+				<section class="reels">
+					<section class="reel" id="reel1">4</section>
+					<section class="reel" id="reel2">2</section>
+					<section class="reel" id="reel3">1</section>
+				</section>
+				<section class="actions">
+					<button class="button" id="min">Min</button>
+					<button class="button" id="max">Max</button>
+				</section>
+				<section class="reset hidden">
+					<button class="button" id="reset">Play Again</button>
+				</section>
 			</section>
-			<section class="actions">
-				<button class="button" id="min">Min</button>
-				<button class="button" id="max">Max</button>
-			</section>
-			<section class="reset hidden">
-				<button class="button" id="reset">Play Again</button>
-			</section>
-		</section>
+			<span></span>
+		</main>
 		<script src="app.js"></script>
 	</body>
 </html>
