@@ -6,7 +6,12 @@ const slot = {
 	credit: 100,
 	bet: null,
 	spin(betAmount) {
+		this.bet = betAmount
 		document.querySelector('h2').innerText = ''
+		document.querySelector(
+			'.credit'
+		).innerText = `Credit: $${this.credit.toFixed(2)}`
+		document.querySelector('.bet').innerText = `Bet: $${this.bet.toFixed(2)}`
 		this.reel1 = this.reelSymbols[this.calculateRandomIndex()]
 		this.reel2 = this.reelSymbols[this.calculateRandomIndex()]
 		this.reel3 = this.reelSymbols[this.calculateRandomIndex()]
@@ -15,8 +20,6 @@ const slot = {
 			reel2: this.reel2,
 			reel3: this.reel3,
 		})
-
-		this.bet = betAmount
 
 		//TODO: display credits and bet and winnings
 
